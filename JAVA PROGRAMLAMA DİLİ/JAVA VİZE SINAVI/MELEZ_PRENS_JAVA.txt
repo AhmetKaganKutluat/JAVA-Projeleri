@@ -1,0 +1,1068 @@
+// 2 sayıyı toplayan program
+
+
+package denemeler;  // PROGRAMIN ADı
+
+import java.util.Scanner; // kütüphane tanımladıgımız yer
+
+
+public class İLK_UYGULAMA 
+{
+    public static void main(String[] args) 
+    {
+    //String isim="manavgat meslek yüksek okulu";
+     //int sayi1=5;
+     //int sayi2=10;
+     //System.out.println(sayi1+sayi2);
+     //System.out.println(isim);
+    int a,b;
+    int sonuc;
+     
+    
+        Scanner veriler = new Scanner(System.in); // okuyucu kutuphane 
+        
+              
+                System.out.print("lütfen birinci sayi giriniz :");    // consolda yazması için 
+                a= veriler.nextInt();                                 // inti bu şekilde alıyoruz .
+                System.out.print("lütfen ikinci sayi giriniz :");
+                b= veriler.nextInt();
+                sonuc=a+b;
+                
+                System.out.println("iki sayinin toplami :"+sonuc);
+               //System.out.println("iki sayinin toplami"+(a+b));
+                
+               
+                
+                
+    
+    
+    }
+    
+}
+
+
+
+
+########################################################################################################################################
+// switch case ile hesap makinesi yapımı
+
+
+
+
+
+
+
+package uygulama;
+
+import java.util.Scanner;
+
+
+public class UYGULAMA {
+
+    public static void main(String[] args) 
+    {
+     int a,b,secim,sonuc;
+     // eger secim char tipinde olsaydı şöyle tanımalnırdı   char secim;
+        Scanner okunan =new Scanner (System.in); //metin,karakter,sayı hepsi için kullanılına 
+        System.out.print("Lütfen birinci sayiyi giriniz :"); a=okunan.nextInt();
+        System.out.print("Lütfen ikinci sayiyi giriniz :"); b=okunan.nextInt();
+        System.out.println("1 - TOPLAMA İŞLEMİ");
+        System.out.println("2 - ÇIKARMA İŞLEMİ");
+        System.out.println("3 - ÇARPMA İŞLEMİ");
+        System.out.println("4 - BÖLME İŞLEMİ");
+        System.out.print("LÜTFEN BİR SEÇİM YAPINIZ : ");secim=okunan.nextInt();
+                                              // char tipinde olsayıdı secim=okunan.next().charAt(0);
+        
+        switch(secim)
+            
+        {// switc başlangıcı
+        
+            case 1:
+            {
+                sonuc=a+b;
+                System.out.print("SAYILARIN TOPLAMI :"+sonuc);
+                break;
+            }
+            case 2:
+            {
+                sonuc=a-b; 
+                System.out.print("SAYILARIN FARKI :"+sonuc);
+                break;
+            }
+            case 3:
+            {
+                sonuc=a*b;
+                System.out.print("SAYILARIN CARPIMI:"+sonuc);
+                break;
+            }
+            case 4:
+            {
+                sonuc=a/b;
+                System.out.print("SAYILARIN BÖLÜMÜ :"+sonuc);
+                break;
+            }
+            default:
+            {
+               System.out.print("SECİLEN DIŞINDA BİR DEĞER GİRİLDİ");
+               System.exit(0);
+              // ödev her seçimden sonra tekrar menüde istemem kısmına gider.
+                break;
+            }
+                
+              
+        }//switc sonu
+        
+        
+        /* if ile aynısını yapma
+        
+        if(secim==1)   // eger char değişken olursa secim '' içine alınır sayılar.
+        {
+         sonuc=a+b;
+                System.out.print("SAYILARIN TOPLAMI :"+sonuc);
+        }
+        else if(secim==2)
+        {
+        sonuc=a-b; 
+                System.out.print("SAYILARIN TOPLAMI :"+sonuc);
+        }
+        else if(secim==3)
+        {
+        sonuc=a*b;
+                System.out.print("SAYILARIN FARKI:"+sonuc);
+        }
+        else if(secim==4)
+        {
+        sonuc=a/b;
+                System.out.print("SAYILARIN BÖLÜMÜ :"+sonuc);
+        }
+        else
+        {
+        System.exit(0); //çıkıs komutu.
+        }
+        
+        
+        */
+      
+        
+    }
+    
+}
+
+
+
+
+
+########################################################################################################################################
+
+
+// inputbox ile veri isteme ve işlem yapma
+
+
+
+
+
+package uygulama2;
+
+import java.util.Scanner;
+import javax.swing.JOptionPane; // inputbox için 
+
+
+public class UYGULAMA2 {
+
+  
+    public static void main(String[] args)
+    {
+     //int a,b,sonuc; char secim;
+      // Scanner okunan=new Scanner(System.in);
+        
+      //  JOptionPane.showMessageDialog(null, "MANAVGAT MESLEK YÜKSEK OKULU"); // MESAJ KUTUSU 
+      //JOptionPane.showMessageDialog(null, "MANAVGAT MESLEK YÜKSEK OKULU","MERHABA",JOptionPane.WARNING_MESSAGE); // BAŞLIKLI MESAJ KUTUSU
+    
+        int sayi=Integer.parseInt(JOptionPane.showInputDialog("LÜTFEN AŞAĞIYA YAZININ"," SINAV NOTUNUZU GİRİNİZ : ")); //string olarak gelen bir ifadeyi tam sayıya çevrebilirsin aa bu tam sayı integer kütüphanenin elemanıdır.
+               System.out.print("GİRİLEN SAYININ HARF KARŞILIĞI  :");
+                switch (sayi/10 )
+                {
+                    case 10:
+                    case 9:
+                 System.out.print("AA");break;
+                    case 8:
+                    case 7:
+                        System.out.print("BB"); break;
+                    case 6: 
+                 //System.out.print("CB"); break;
+                   JOptionPane.showConfirmDialog(null, "ÖĞRENCİNİN HARF NOTU  : CB","",JOptionPane.CANCEL_OPTION); break;
+                    case 5:
+                    case 4:
+                      System.out.print("CC"); break;  
+                        default:System.out.print("FF"); break;  
+                }
+                      
+   
+    
+    System.out.println("");  // sistem yeşil mesajını aşağıda olsun diye
+    }
+   
+}
+
+
+
+########################################################################################################################################
+// fibonacci örnek uygulamasıı
+
+
+
+
+package uygulama1;
+import java.util.Scanner;
+public class UYGULAMA1 {
+
+    
+    public static void main(String[] args) 
+    
+    {
+     // fibonacci serisi 0 1 1 2 3 5 8 13 ....
+        Scanner oku = new Scanner(System.in);
+        int s1=0; 
+        int s2=1;
+        int okunan;
+        int i;
+        int sonuc;
+        
+        System.out.print("Kaç Tane Fibonacci Sayısı Yazdırılsın : ");
+        okunan=oku.nextInt();
+        System.out.print(s1+" "+s2);
+        for (i=2;i<okunan;i++)
+        {
+        sonuc=s1+s2;
+        System.out.print(" "+sonuc);
+        s1=s2;
+        s2=sonuc;
+        }
+        System.out.println();
+        
+        
+        
+    }
+    
+}
+
+########################################################################################################################################
+// dizili uygulama örnek // diziler
+
+
+
+
+
+package uygulama2;
+
+import java.util.Scanner;
+import java.util.ArrayList;   // dizi oluşturmak için
+import java.util.*;   // liste kutumu çağırmak için
+public class UYGULAMA2 {
+
+   
+    public static void main(String[] args)
+    {
+        List memleket = new ArrayList();      
+        memleket.add("ISPTARTA"); memleket.add("KAYSERİ"); memleket.add("GAZİANTEP");
+        memleket.add("SAMSUN"); memleket.add("İSTANBUL"); memleket.add("KIRIKLARELİ");
+        
+        System.out.println(memleket);
+        System.out.println("DİZİNİN 2. ELEMANI : " + memleket.get(2));
+        System.out.println(memleket.isEmpty()); // isempty boş olarak kontrol ediyor. ama boş değil o yüzden false  veriyor
+        System.out.println(memleket.contains("İSTANBUL"));  //contains içermek demek istanbulu içeriyormu diyor
+        System.out.println(memleket.indexOf("KIRIKLARELİ"));  // index numarasını verir
+        memleket.set(3,"ANTALYA");
+       // memleket.remove(3);  3.elemanı sil
+        System.out.println(memleket);
+        
+    }
+    
+}
+
+
+
+########################################################################################################################################
+//diziler ile kendi aralarında toplama yapmış
+
+
+
+
+package uygulama1;
+
+import java.util.Locale;
+import javax.print.DocFlavor;
+import javax.swing.JOptionPane;
+
+
+public class UYGULAMA1 {
+    
+    public static String  ekran(int a[])
+    {
+        String yaz="";
+        
+        for(int i=0;i<a.length;i++)
+        {
+        yaz=yaz+String.format("%8d",a[i]);
+        
+        }
+    yaz=yaz+"\n";
+    return yaz;
+    }
+
+   
+    public static void main(String[] args)
+    {
+       // TEK BOYUTLU DİZİ UYGULAMASI ÖNEMLİ !!
+        int dizi1[]={15,5,7,9,12,14,61,11,2,60};
+        int dizi2[]={10,6,4,12,9,3,6,12,45,87};
+        int dizi3[]=new int[dizi1.length];
+        
+        int i =0;
+        
+        while(i<dizi1.length)
+        {
+        
+        dizi3[i]=dizi1[i]+dizi2[i];
+        i++;
+        }
+           String metin = "DİZİ 1 ELEMANLARI : \n"+ekran(dizi1)+"\nDİZİ2 ELEMANLARI : \n"+ekran(dizi2)+"\nSONUÇ SAYILARI : \n"+ekran(dizi3);
+           String baslik="DİZİ ELEMANLARININ BİREBİR ÇIKTILARI AŞAĞIDADIR";
+           
+           JOptionPane.showMessageDialog(null,metin,baslik,JOptionPane.PLAIN_MESSAGE);
+    }
+    
+}
+
+
+
+
+
+########################################################################################################################################
+// dosyadan okuma komutları ve dosya kontrol
+
+package text_ıslemlerı_2;
+
+import java.io.*;
+import java.util.Scanner;
+
+
+
+public class TEXT_ISLEMLERI_2 {
+
+   
+    public static void main(String[] args) throws IOException   // sarı imlece basım ekledik bu ıoexceptionu.
+    {
+        
+        File dosya=new File("bilgiler.txt");
+        if(!dosya.exists()) // dosya kontrolü böyle bir dosya yoksa
+        {
+        dosya.createNewFile();
+        }
+        
+            
+        
+        
+        Scanner oku = new Scanner(System.in);
+        String isim; int gelir; float maas;
+        System.out.println("LÜTFEN ADINIZI GİRİNİZ"); isim=oku.next();
+        System.out.println("LÜTFEN GELİR GİRİNİZ"); gelir=oku.nextInt();
+        System.out.println("LÜTFEN MAAS GİRİNİZ"); maas=oku.nextFloat();
+        
+        try
+            {
+                FileWriter kaydet= new FileWriter(dosya,true);
+                PrintWriter yazıcı=new PrintWriter(dosya);
+                yazıcı.print(isim); yazıcı.print(" ");  yazıcı.print(gelir); yazıcı.print(" "); yazıcı.print(maas); 
+                yazıcı.close();
+                System.out.println("KAYIT İŞLEMİ BAŞARILI");
+                
+                
+            }
+        catch(IOException e)
+                
+            {
+                 System.out.println("KAYIT İŞLEMİ BAŞARISIZ");    
+            }
+        
+        
+    
+        
+        
+    }
+    
+}
+
+########################################################################################################################################
+// dairenin alanı ve yarıcapı
+package soru3;
+
+import java.util.Scanner;
+public class SORU3 {
+
+ 
+    public static void main(String[] args)
+    
+    {
+     
+      Scanner okunan = new Scanner(System.in);
+        
+        System.out.print("Dairenin yarıçapını giriniz: ");
+        int yarıcap = okunan.nextInt();
+        
+        System.out.println("Dairenin alanı = " + (Math.PI * yarıcap * yarıcap));
+        System.out.println("Dairenin cevresı = " + (Math.PI * yarıcap*2 ));
+        
+    }
+    
+}
+
+
+########################################################################################################################################
+// dizi elemanları tek mi çift mi ?.
+package dizi.elemanlarının.tek.çift.olduğunu.bulan.uygulama;
+
+
+public class DiziElemanlarınınTekÇiftOlduğunuBulanUygulama {
+
+    public static void main(String[] args) 
+    {
+       
+        Integer dizi[]={1,2,3,4,5,6,7,8,9,10};
+        for(int i=0;i< dizi.length;i++)
+        {
+            
+        if (dizi[i] %2==0) 
+        {
+        System.out.println(dizi[i]+" cift");
+        }
+        if (dizi[i] %2!=0) 
+        {
+        System.out.println(dizi[i]+" tek");
+        }
+        
+        }
+        
+    }
+    
+}
+
+
+
+
+########################################################################################################################################
+// faktoriyel   // faktöriyel
+package soru1;
+import java.util.Scanner;
+
+public class SORU1 {
+
+    public static void main(String[] args)
+    {
+        Scanner okunan = new Scanner(System.in);
+        System.out.print("Sayi Giriniz : ");
+        int deger = okunan.nextInt();
+        int faktoriyel = 1;
+        for(int i = 1; i<= deger; i++){
+            faktoriyel = faktoriyel * i;
+        }
+         
+        System.out.println("GİRDİĞİNİZ SAYININ FAKTORİYEL KARŞILIĞI : "+faktoriyel);
+    }
+    
+}
+
+
+
+########################################################################################################################################
+// carpım tablosu
+package sayının.çarpım.tablosunu.yazdıran.program;
+
+import java.util.Scanner;
+
+public class SayınınÇarpımTablosunuYazdıranProgram {
+
+    public static void main(String[] args) 
+    
+    {
+        
+        Scanner oku = new Scanner(System.in);
+        int sayi;
+        
+        System.out.print("LÜTFEN BİR SAYI GİRİNİZ = ");
+        sayi=oku.nextInt();
+        
+        for (int i=1;i<=10;i++)
+        {
+        System.out.println(i+" x "+sayi+" = "+(i*sayi));
+        
+        }
+     
+    }
+    
+}
+
+
+
+########################################################################################################################################
+// en buyuk ve en kucuk sayı bulma
+package girilen.en.büyük.sayıyı.bulan.program;
+
+
+import java.util.Scanner;
+public class GirilenEnBüyükSayıyıBulanProgram {
+
+    
+ 
+    public static void main(String[] args)
+    {
+        
+         int max=0;
+        int min=0;
+        int sayı;
+        
+        Scanner oku=new Scanner(System.in);
+        System.out.print("KAÇ TANE SAYI GİRMEK İSTİYORSUNUZ :");
+        sayı=oku.nextInt();
+       
+        
+        
+        
+        for (int i=1;i<=sayı;i++)
+        {
+        System.out.print(i+" SAYIYI GİRİNİZ :");
+        int sayılar=oku.nextInt();
+        
+        if(i==1)
+        {
+        max=sayılar;
+        min=sayılar;
+        
+        }
+        
+         if (sayılar>max)
+                max=sayılar;
+            
+            if (sayılar<min)
+                min=sayılar;
+            
+         }
+        
+        System.out.println("girdiginiz sayilar icinden en buyuk olani: "+max);
+        System.out.println("girdiginiz  sayilar icinden en kucuk olani: "+min);
+                
+       
+    }
+    
+}
+
+
+
+########################################################################################################################################
+// fibanocci
+package uygulama1;
+import java.util.Scanner;
+public class UYGULAMA1 {
+
+    
+    public static void main(String[] args) 
+    
+    {
+     // fibonacci serisi 0 1 1 2 3 5 8 13 ....
+        Scanner oku = new Scanner(System.in);
+        int s1=0; 
+        int s2=1;
+        int okunan;
+        int i;
+        int sonuc;
+        
+        System.out.print("Kaç Tane Fibonacci Sayısı Yazdırılsın : ");
+        okunan=oku.nextInt();
+        System.out.print(s1+" "+s2);
+        for (i=2;i<okunan;i++)
+        {
+        sonuc=s1+s2;
+        System.out.print(" "+sonuc);
+        s1=s2;
+        s2=sonuc;
+        }
+        System.out.println();
+        
+        
+        
+    }
+    
+}
+
+
+
+########################################################################################################################################
+// not hesaplama // harf notu
+package soru2;
+
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
+public class SORU2 {
+
+    public static void main(String[] args)
+    {
+ 
+        Scanner deger = new Scanner(System.in);
+        
+     
+        int vize = Integer.parseInt(JOptionPane.showInputDialog("VİZE NOTUNUZU GİRİNİZ"));
+       
+        int fınal = Integer.parseInt(JOptionPane.showInputDialog("FİNAL NOTUNUZU GİRİNİZ"));
+        
+        double not = (vize * 0.4) + (fınal * 0.6);
+        
+        System.out.println("Notunuz = " + not);
+        
+        if(not > 85) {
+            System.out.println("AA ile dersi geçtiniz.");
+        }
+        else if(not > 80) {
+            System.out.println("BA ile dersi geçtiniz.");
+        }
+        else if(not > 75) {
+            System.out.println("BB ile dersi geçtiniz.");
+        }
+        else if(not > 70) {
+            System.out.println("CB ile dersi geçtiniz.");
+        }
+        else if(not >= 60) {
+            System.out.println("GEÇTİNİZ.");
+        }
+        else {
+            System.out.println("KALDINIZ.");
+        }
+    }
+        
+    }
+    
+
+
+
+
+########################################################################################################################################
+// yazıyı tersten yazma
+
+package yazıyı.tersten.yazdıran.program;
+
+import java.util.Scanner;
+
+public class YazıyıTerstenYazdıranProgram {
+
+    
+    public static void main(String[] args)
+    {
+        Scanner oku = new Scanner(System.in);
+        System.out.println("METİN GİRİNİZ :");
+        String metin=oku.nextLine();
+        String ters="";
+        
+        for (int i = metin.length()-1;i>=0;i--)
+        {
+        ters=ters+metin.charAt(i);
+        }
+        System.out.println("GİRDİĞİNİZ METNİN TERSİ:\n"+ters);
+        
+                
+        
+    }
+    
+}
+
+########################################################################################################################################
+// selsius ve fahrenayt çevirme
+package soru4;
+
+import java.util.Scanner;
+public class SORU4 {
+
+    
+    public static void main(String[] args) 
+    {
+       Scanner deger=new Scanner(System.in);
+
+       
+       double f;
+       
+for (int c = 1; c < 100; c++) {
+f=((c*1.8)+32);
+System.out.println(c+" derece "+ " " +f+" fahrenheit");
+}
+}
+    }
+
+
+########################################################################################################################################
+2.dereceden denklem
+package soru1;
+import java.util.Scanner;
+
+public class SORU1 {
+
+    
+    public static void main(String[] args)
+    
+    {
+      Scanner sc = new Scanner(System.in); 
+        System.out.println("(ax²+bx+c) ikinci dereceden bir denklemdir.\n Denklemdeki sabitleri aşağıdaki gibi sırayla girin"); 
+        
+        System.out.print("a değerini giriniz :"); 
+        double a = sc.nextInt(); 
+        System.out.print("b değerini giriniz   :"); 
+        double b = sc.nextInt(); 
+        System.out.print("c değerini giriniz   :"); 
+        double c = sc.nextInt(); 
+        //diskriminant (delta)
+        double delta = (b * b) - (4 * a * c); 
+        
+        if (delta > 0){ 
+            double x1 = ((-1 * b) - Math.sqrt(delta)) / (2 * a); 
+            double x2 = ((-1 * b) + Math.sqrt(delta)) / (2 * a); 
+            System.out.println("x1= " + x1 + " x2= " + x2); 
+        } 
+        if (delta < 0){
+            System.out.println("Denklemin Gerçel Kökü Yoktur."); 
+        } 
+        if (delta == 0){ 
+            double x = (-1 * b) / (2 * a);
+            System.out.println("Çakışık kökü var x1= x2= " + x); 
+        }
+   
+        
+    }
+    
+}
+########################################################################################################################################
+
+// dizi ile ortalama hesaplama 
+
+
+package dizi.ile.ortalama.hesaplayan.bir.uygulama;
+
+import javax.swing.JOptionPane;
+
+
+public class DiziİleOrtalamaHesaplayanBirUygulama {
+
+    public static void main(String[] args) 
+    {
+        
+        float notlar[]= new float[3];
+        
+        notlar[0]=Float.valueOf(JOptionPane.showInputDialog(null,"LÜTFEN 1. SAYIYI GİRİNİZ"));
+        notlar[1]=Float.valueOf(JOptionPane.showInputDialog(null,"LÜTFEN 2. SAYIYI GİRİNİZ"));
+        notlar[2]=Float.valueOf(JOptionPane.showInputDialog(null,"LÜTFEN 3. SAYIYI GİRİNİZ"));
+        
+        float ortalama = (notlar[0]+notlar[1]+notlar[2])/3;
+        
+        JOptionPane.showMessageDialog(null,"ORTALAMA "+ Float.toString(ortalama));
+        
+        System.out.print("ORTALAMA :"+Float.toString(ortalama));
+        
+        
+    }
+    
+}
+
+
+########################################################################################################################################
+
+// dizili işlemler
+
+package uygulama2;
+
+import java.util.Scanner;
+import java.util.ArrayList;   // dizi oluşturmak için
+import java.util.*;   // liste kutumu çağırmak için
+public class UYGULAMA2 {
+
+   
+    public static void main(String[] args)
+    {
+        List memleket = new ArrayList();      
+        memleket.add("ISPTARTA"); memleket.add("KAYSERİ"); memleket.add("GAZİANTEP");
+        memleket.add("SAMSUN"); memleket.add("İSTANBUL"); memleket.add("KIRIKLARELİ");
+        
+        System.out.println(memleket);
+        System.out.println("DİZİNİN 2. ELEMANI : " + memleket.get(2));
+        System.out.println(memleket.isEmpty()); // isempty boş olarak kontrol ediyor. ama boş değil o yüzden false  veriyor
+        System.out.println(memleket.contains("İSTANBUL"));  //contains içermek demek istanbulu içeriyormu diyor
+        System.out.println(memleket.indexOf("KIRIKLARELİ"));  // index numarasını verir
+        memleket.set(3,"ANTALYA");
+       // memleket.remove(3);  3.elemanı sil
+        System.out.println(memleket);
+        
+    }
+    
+}
+
+
+
+
+########################################################################################################################################
+
+// inputbox ve showdiolog özellikleri.
+
+
+package uygulama2;
+
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
+
+public class UYGULAMA2 {
+
+  
+    public static void main(String[] args)
+    {
+     //int a,b,sonuc; char secim;
+      // Scanner okunan=new Scanner(System.in);
+        
+      //  JOptionPane.showMessageDialog(null, "MANAVGAT MESLEK YÜKSEK OKULU"); // MESAJ KUTUSU 
+      //JOptionPane.showMessageDialog(null, "MANAVGAT MESLEK YÜKSEK OKULU","MERHABA",JOptionPane.WARNING_MESSAGE); // BAŞLIKLI MESAJ KUTUSU
+    
+        int sayi=Integer.parseInt(JOptionPane.showInputDialog("LÜTFEN AŞAĞIYA YAZININ"," SINAV NOTUNUZU GİRİNİZ : ")); //string olarak gelen bir ifadeyi tam sayıya çevrebilirsin aa bu tam sayı integer kütüphanenin elemanıdır.
+               System.out.print("GİRİLEN SAYININ HARF KARŞILIĞI  :");
+                switch (sayi/10 )
+                {
+                    case 10:
+                    case 9:
+                 System.out.print("AA");break;
+                    case 8:
+                    case 7:
+                        System.out.print("BB"); break;
+                    case 6: 
+                 //System.out.print("CB"); break;
+                   JOptionPane.showConfirmDialog(null, "ÖĞRENCİNİN HARF NOTU  : CB","",JOptionPane.CANCEL_OPTION); break;
+                    case 5:
+                    case 4:
+                      System.out.print("CC"); break;  
+                        default:System.out.print("FF"); break;  
+                }
+                      
+   
+    
+    System.out.println("");  // sistem yeşil mesajı aşağıda olsun diye
+    }
+   
+}
+
+
+########################################################################################################################################
+// if else ile menü // menülü toplama çıkartma
+
+
+package uygulama;
+
+import java.util.Scanner;
+
+
+public class UYGULAMA {
+
+    public static void main(String[] args) 
+    {
+     int a,b,secim,sonuc;
+     // eger secim char tipinde olsaydı şöyle tanımalnırdı   char secim;
+        Scanner okunan =new Scanner (System.in); //metin,karakter,sayı hepsi için kullanılına 
+        System.out.print("Lütfen birinci sayiyi giriniz :"); a=okunan.nextInt();
+        System.out.print("Lütfen ikinci sayiyi giriniz :"); b=okunan.nextInt();
+        System.out.println("1 - TOPLAMA İŞLEMİ");
+        System.out.println("2 - ÇIKARMA İŞLEMİ");
+        System.out.println("3 - ÇARPMA İŞLEMİ");
+        System.out.println("4 - BÖLME İŞLEMİ");
+        System.out.print("LÜTFEN BİR SEÇİM YAPINIZ : ");secim=okunan.nextInt();
+                                              // char tipinde olsayıdı secim=okunan.next().charAt(0);
+        
+        switch(secim)
+            
+        {// switc başlangıcı
+        
+            case 1:
+            {
+                sonuc=a+b;
+                System.out.print("SAYILARIN TOPLAMI :"+sonuc);
+                break;
+            }
+            case 2:
+            {
+                sonuc=a-b; 
+                System.out.print("SAYILARIN FARKI :"+sonuc);
+                break;
+            }
+            case 3:
+            {
+                sonuc=a*b;
+                System.out.print("SAYILARIN CARPIMI:"+sonuc);
+                break;
+            }
+            case 4:
+            {
+                sonuc=a/b;
+                System.out.print("SAYILARIN BÖLÜMÜ :"+sonuc);
+                break;
+            }
+            default:
+            {
+               System.out.print("SECİLEN DIŞINDA BİR DEĞER GİRİLDİ");
+               System.exit(0);
+              // ödev her seçimden sonra tekrar menüde istemem kısmına gider.
+                break;
+            }
+                
+              
+        }//switc sonu
+        
+        
+        /* if ile aynısını yapma
+        
+        if(secim==1)   // eger char değişken olursa secim '' içine alınır sayılar.
+        {
+         sonuc=a+b;
+                System.out.print("SAYILARIN TOPLAMI :"+sonuc);
+        }
+        else if(secim==2)
+        {
+        sonuc=a-b; 
+                System.out.print("SAYILARIN TOPLAMI :"+sonuc);
+        }
+        else if(secim==3)
+        {
+        sonuc=a*b;
+                System.out.print("SAYILARIN FARKI:"+sonuc);
+        }
+        else if(secim==4)
+        {
+        sonuc=a/b;
+                System.out.print("SAYILARIN BÖLÜMÜ :"+sonuc);
+        }
+        else
+        {
+        System.exit(0);
+        }
+        
+        
+        */
+      
+        
+    }
+    
+}
+
+########################################################################################################################################
+// dosyadan okuma ve dosya işlemleri
+
+
+package dosya.işlemlerii;
+
+import java.io.*;
+import java.util.Scanner;
+public class DOSYAİŞLEMLERİİ {
+
+  
+    public static void main(String[] args) 
+    {
+       File dosya=new File("bilgiler.txt");
+       if(dosya.exists())
+       {
+       System.out.println("DOSYANIN ADI         :   "+dosya.getName()); 
+       System.out.println("DOSYANIN TAM YOLU    :"+dosya.getAbsolutePath());
+       System.out.println("DOSYA YAZILABİLİR Mİ ?"+dosya.canWrite());
+       System.out.println("DOSYA OKUNABİLİR Mİ  ?"+dosya.canRead());
+       System.out.println("DOSYANIN KAPLADIĞI ALAN :"+dosya.length());
+       System.out.println("KLASÖR MÜSÜN          ?"+dosya.isDirectory());
+       System.out.println("DOSYA MISIN          ?"+dosya.isFile());
+       System.out.println("MODİFİYELİ MİSİN     ?"+dosya.lastModified());       
+       }
+       else 
+       {
+       System.out.print("Böyle Bir dosya yoktur");
+       }
+       
+       try
+       {
+       Scanner okuyucu = new Scanner(dosya);
+       while(okuyucu.hasNextLine())
+       {
+       String okunan=okuyucu.nextLine();
+       System.out.print(okunan);
+       }
+       okuyucu.close();
+       
+       }
+       catch(IOException e)
+               {    
+               System.out.print("hata !");
+               }
+       
+        
+        
+         // ******BUFFERREADER YÖNTEMİ ****//
+        /*
+        try
+        {
+        FileReader dosya = new FileReader("bilgiler.txt");
+        BufferedReader okuyucu=new BufferedReader(dosya);
+        String okunan;
+        while((okunan=okuyucu.readLine())!=null)
+        {
+        System.out.print(okunan);
+        }
+        
+        }
+        catch (IOException e)
+        {System.out.print("HAATAAAA!!!");}
+      
+       */
+    }
+    
+}
+
+
+
+
+########################################################################################################################################
+// DOSYAYA YAZMA
+
+
+
+
+
+package yol.vererek.okutma;
+
+import java.io.*;
+public class YolVererekOkutma {
+
+    
+    public static void main(String[] args) throws FileNotFoundException 
+    {
+   
+        String yol="ogr\\bilgiler.txt";
+        File dosya=new File(yol);
+        if(dosya.exists())
+        {
+        System.out.print("dosya bulundu !!");
+        PrintWriter dosyaya_yaz=new PrintWriter(dosya);
+        dosyaya_yaz.print("ZIKKIM");
+        dosyaya_yaz.println(2021);
+        dosyaya_yaz.close();
+        }
+        else
+        {
+         System.out.print("dosya bulunamadı !!");
+        }
+        
+        
+        
+        
+        
+    }
+    
+}
+
+
+
